@@ -3,58 +3,92 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/*LAYOUT*/
+
+.container, .wrapper, .masonry-vertical, .masonry-horizontal, footer {
+    display: flex;
 }
 
 .container  {
-    display: flex;
     justify-content: center;
 
 }
 
 .wrapper {
-    display: flex;
     flex-wrap: wrap;
-    width: 90%;
+    width: 80%;
 }
 
-/*BOX SIZES*/
+.masonry-vertical {
+    flex-flow: column wrap;
+    max-height: 850px;
+    width: 100%;
+}
+
+.masonry-horizontal {
+    width: 100%;
+}
+
+
+
+/*BOXES*/
 header, footer {
+    text-align: center;
     width: 100%;
     height: 50px;
     margin: 10px 0;
     padding: 5px;
 }
 
-section:nth-child(2) {
+.masonry-vertical section:nth-child(n), .masonry-horizontal section:nth-child(n), main, aside {
+    margin: 0 5px 5px 0;
+    padding: 10px;
+}
+
+.masonry-vertical section:nth-child(1) {
     width: 40%;
     height: 350px;
-
 }
 
 main {
     width: 60%;
     height: 500px;
+    order: 2;
 }
 
 aside {
     width: 40%;
     height: 450px;
+    order: 1;
 }
 
-section:nth-child(5) {
+.masonry-vertical section:nth-child(4) {
     width: 60%;
     height: 300px;
+    order: 3;
 }
 
-section:nth-child(6) {
+.masonry-horizontal section:nth-child(1) {
     width: 70%;
     height: 200px;
 }
 
-section:nth-child(7) {
+.masonry-horizontal section:nth-child(2) {
     width: 30%;
     height: 200px;
 }
+
+/*FOOTER*/
+
+footer {
+   align-items: center;
+   justify-content: center;
+}
+
+/*LISTS*/
 
 header ul {
     display: flex;
@@ -68,8 +102,6 @@ header ul li {
     margin: 5px;
     padding: 5px;
     height: 30px;
-    line-height: 2em;
-
 }
 
 header ul li a {
@@ -80,6 +112,8 @@ li {
     list-style: none;
 }
 
+/*LINKS*/
+
 a {
     text-decoration: none;
 }
@@ -89,7 +123,7 @@ header {
     background-color: #54d5eb;
 }
 
-section:nth-child(2) {
+.masonry-vertical section:nth-child(1) {
     background-color: #d7c9e3;
 }
 
@@ -101,15 +135,15 @@ aside {
     background-color: #9fc363;
 }
 
-section:nth-child(5) {
+.masonry-vertical section:nth-child(4) {
     background-color: #898989;
 }
 
-section:nth-child(6) {
+.masonry-horizontal section:nth-child(1) {
     background-color: #2bb673;
 }
 
-section:nth-child(7) {
+.masonry-horizontal section:nth-child(2) {
     background-color: #f2cbdd;
 }
 
